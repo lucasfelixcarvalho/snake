@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+.quadrado{
+    width: 95vw;
+    height: 95vw;
+    max-height: 98vh;
+    max-width: 98vh;
+    position: relative;
+    align-content: center;
+    margin: auto;
+}
+
+div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: auto;
+}
+
+div#interface{
+    float: left;
+    display: block;
+}
+div#jogo{
+    float: left;
+    padding: 0px;
+    display: block;
+}
+
+section{
+    display: block;
+}
+
+div#informacoes{
+    float: right;
+    padding: 0px;
+    display: block;
+}
+
+.conteudo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    max-width: 600px;
+    
+}
+
+table#tabela-principal{
+    background-color: white;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+table#tabela-principal tr{
+    
+    border: 1px solid black;
+    
+}
+
+table#tabela-principal td{
+
+    border: 1px solid black;
+ 
+}
+
+table#tabela-principal td.default{
+    background-color: white;
+}
+
+table#tabela-principal td.comida{
+    background-color: darkred;
+}
+
+table#tabela-principal td.snake{
+    background-color: gray;
+}
+
+table#tabela-principal td.cabeca-snake{
+    background-color: darkslategray;
+}
+
+table#tabela-principal td.rabo-snake{
+    background-color: green;
+}
+
+img {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    z-index: 100;
+}
+
+figcaption{
+    position: absolute;
+    top: 380px;
+}
+
+h2 {
+    text-align: center;
+    font-family: sans-serif;
+}
