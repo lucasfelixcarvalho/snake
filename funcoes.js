@@ -250,48 +250,44 @@ function mover(fn) {
 function inputTeclado(event) {
     if (event.keyCode == 38 || event.keyCode == 87) // Cima
     {
-        if (direcao != "baixo") {
-            if (direcao != "cima")
-                mover("moveCima");
-            else if(!modo)
+        if(direcao != "baixo")
+        {
+            if(modo) // modo lenon
+                direcao = "cima";
+            else
                 mover("moveCima");
         }
-        else
-            direcao = "baixo";
     }
     if (event.keyCode == 40 || event.keyCode == 83) // Baixo
     {
-        if (direcao != "cima") {
-            if (direcao != "baixo")
-                mover("moveBaixo");
-            else if(!modo)
+        if(direcao != "cima")
+        {
+            if(modo) // modo lenon
+                direcao = "baixo";
+            else
                 mover("moveBaixo");
         }
-        else
-            direcao = "cima";
     }
     if (event.keyCode == 37 || event.keyCode == 65) // Esquerda
     {
-        if (direcao != "direita") {
-            if (direcao != "esquerda")
-                mover("moveEsquerda");
-            else if(!modo)
+        if(direcao != "direita")
+        {
+            if(modo)
+                direcao = "esquerda";
+            else
                 mover("moveEsquerda");
         }
-        else
-            direcao = "direita";
     }
     if (event.keyCode == 39 || event.keyCode == 68) // Direita
     {
-        if (direcao != "esquerda") {
-           if (direcao != "direita")
-                mover("moveDireita");
-            else if(!modo)
+        if(direcao != "esquerda")
+        {
+            if(modo)
+                direcao = "direita";
+            else
                 mover("moveDireita");
         }
-        else
-            direcao = "esquerda";
-    }
+    }    
 };
 
 // Load da página
@@ -300,3 +296,6 @@ window.onload = function start() {
     document.getElementById("wasted").addEventListener("click", loadAll);
     document.getElementById("modo-lenon").addEventListener("click", setModo);
 };
+
+
+
