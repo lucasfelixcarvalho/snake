@@ -17,9 +17,14 @@ div{
     margin: auto;
 }
 
+.info{
+    margin-left: 100px; 
+}
+
 div#interface{
     float: left;
     display: block;
+    overflow: hidden;
 }
 div#jogo{
     float: left;
