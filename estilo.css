@@ -23,9 +23,17 @@ div#interface {
 }
 
 div#informacoes {
-    width: 20%;
-    display: block;
-    float: right;
+    overflow: hidden;
+    display: inline-block;
+    position: absolute;
+}
+
+@media screen and (max-width: 1000px){
+    div#interface{
+        float: none;
+        width: auto;
+        overflow: hidden;
+    }
 }
 
 div#jogo {
