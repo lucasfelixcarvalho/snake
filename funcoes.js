@@ -9,8 +9,8 @@ var tempo; // tempo do intervalo com que a snake anda automatico, 1seg. de inici
 var direcao; // direçao que a snake está seguindo
 var go; // variável que inicia o jogo, começando apenas quando o usuário aperta uma das setas
 var timer; // timer com a funçao e o tempo que a snake andará automaticamente
-var modo;
-
+var modo; // Modo lenon, alteracoes na forma da snake se mover
+var raboSnake;
 // Objeto snake e seus atributos, onde status pode ser: cabeca-snake, snake (corpo da snake), comida, default (em branco)
 // As respectivas classes estão no CSS, com cores diferentes para exibiçao ao usuario
 var Snake = function (linha, coluna, status) {
@@ -30,6 +30,7 @@ function loadAll() {
     tbJogo = new Array();
     snake = new Array();
     setModo();
+    raboSnake = true;
 
     var tabela = document.getElementsByTagName("td");
     for (var i = 0; i < tabela.length; i++)
@@ -39,7 +40,7 @@ function loadAll() {
     document.getElementById("figWasted").setAttribute("hidden", "true");
 
     life = 2;
-    tempo = 1000;
+    tempo = 500;
     direcao = "";
     go = 0;    
     timer = setInterval(eventoTimer, tempo);
@@ -163,16 +164,30 @@ function comer() {
 
 // Altera o CSS do tabuleiro para dar impressão de movimento da Snake
 function setSnake(celula) {
-    for (var i = 0; i < celula.length; i++) {
+    for (var i = 0; i < celula.length-1; i++) {
         document.getElementById("lin" + celula[i].linha + "col" + celula[i].coluna).setAttribute("class", celula[i].status);
         tbJogo[celula[i].linha][celula[i].coluna].status = celula[i].status;
     }
+
 };
 
 // Limpa a última célula da snake, onde ela termina, deixando como default novamente
 function clearSnake(celula) {
     document.getElementById("lin" + celula.linha + "col" + celula.coluna).setAttribute("class", "default");
     tbJogo[celula.linha][celula.coluna].status = "default";
+};
+
+function setRaboSnake(celula){
+    if(raboSnake)
+    {
+        document.getElementById("lin" + celula.linha + "col" + celula.coluna).setAttribute("class", "rabo-snake-esq");
+        raboSnake = false;
+    }
+    else
+    {
+        document.getElementById("lin" + celula.linha + "col" + celula.coluna).setAttribute("class", "rabo-snake-dir");
+        raboSnake = true;
+    }    
 };
 
 // Move todo o corpo da snake, exceto a cabeça, para a posiçao da célula da frente
@@ -188,6 +203,7 @@ function moveSnake() {
     snake[0].status = "cabeca-snake";
 
     setSnake(snake);
+    
 };
 
 // Move apenas a cabeça da snake, onde são verificados se a próxima célula é comida, default ou snake, e toma as açoes necessárias para cada uma
@@ -243,7 +259,10 @@ function mover(fn) {
     else if (tbJogo[snake[0].linha][snake[0].coluna].status == "comida")
         comer();
     else
+    {
         setSnake(snake);
+        setRaboSnake(snake[snake.length -1]);
+    }
 };
 
 // Recebe o input do teclado do usuário, apenas as setas estão mapeadas

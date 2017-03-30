@@ -63,11 +63,24 @@ table#tabela-principal td.default{
 }
 
 table#tabela-principal td.comida{
-    background-color: darkred;
+    /*background-color: darkred;*/
+    
+    background-image: radial-gradient(ellipse farthest-corner at 100px 100px , rgb(128, 128, 128) 30%, rgba(128, 128, 128, 0.4) 50%, white 80%);
 }
 
-table#tabela-principal td.snake{
+table#tabela-principal td.snake{    
     background-color: gray;
+}
+
+table#tabela-principal td.rabo-snake-dir{    
+    background-image: radial-gradient(ellipse farthest-corner at 100px 100px , rgb(128, 128, 128) 30%, rgba(128, 128, 128, 0.4) 50%, white 80%);
+    /*transition: all 0.5s ease-in;*/
+    transition: width 0.5s, height 0.5s, background-color 0.5s, transform 0.5s;
+}
+
+table#tabela-principal td.rabo-snake-esq{    
+    background-image: radial-gradient(ellipse farthest-corner at 0px 100px , rgb(128, 128, 128) 30%, rgba(128, 128, 128, 0.4) 50%, white 80%);
+    transition: width 0.5s, height 0.5s, background-color 0.5s, transform 0.5s;
 }
 
 table#tabela-principal td.cabeca-snake{
