@@ -1,7 +1,11 @@
 @charset "UTF-8";
+@font-face{
+    font-family: "Arcade Classic";
+    src: url("_font/ARCADECLASSIC.TTF");    
+}
 
 body{
-    background: #f1f1f1;
+    background: #949494;
     height: 98vw;
     width: 98vw;
     max-width: 100vh;
@@ -26,14 +30,10 @@ div#informacoes {
     overflow: hidden;
     display: inline-block;
     position: absolute;
-}
-
-@media screen and (max-width: 1000px){
-    div#interface{
-        float: none;
-        width: auto;
-        overflow: hidden;
-    }
+    border: 1px solid black;
+    background-color: black;
+    padding: 5px;
+    box-shadow: 1px 1px 10px 2px black;
 }
 
 div#jogo {
@@ -47,6 +47,67 @@ div#jogo {
     max-height: 98vh;
 }
 
+p, label {
+    text-align: left;
+    font-family: "Arcade Classic";        
+    line-height: 10%;
+}
+
+p{
+    font-size: 250%;
+}
+
+label{
+    color: white;
+}
+
+p.bestSco{
+    color: red;
+}
+
+p.lvl{
+    color: green;
+}
+
+@media screen and (max-width: 1450px){
+    body{
+        height: 98vw;
+        width: 98vw;
+        max-width: 100vh;
+        max-height: 100vh;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    p{
+        font-size: 200%;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    div#interface{
+        width: 100%;
+        height: 100%;
+        display: block;
+        float: left;
+    }
+
+    body{
+        margin: auto;
+        overflow: hidden;
+    }
+
+    div#informacoes {
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+    }
+
+    p{
+        font-size: 150%;
+    }
+}
+
 table#tabela-principal{
     background-color: white;
     border: 1px solid black;
@@ -54,49 +115,52 @@ table#tabela-principal{
     height: 100%;
 }
 
-table#tabela-principal tr{
-    
-    border: 1px solid black;
-    
+table#tabela-principal tr{    
+    border: 1px solid black;    
 }
 
 table#tabela-principal td{
-
-    border: 1px solid black;
- 
+    border: 1px solid black; 
 }
 
 table#tabela-principal td.default{
     background-color: white;
 }
 
-table#tabela-principal td.comida{
-    /*background-color: darkred;*/
-    
-    background-image: radial-gradient(ellipse farthest-corner at 100px 100px , rgb(128, 128, 128) 30%, rgba(128, 128, 128, 0.4) 50%, white 80%);
+table#tabela-principal td.comida-brain{
+    /*background-color: darkred;*/    
+    /*background-image: radial-gradient(ellipse farthest-corner at 100px 100px , rgb(128, 128, 128) 30%, rgba(128, 128, 128, 0.4) 50%, white 80%);*/
+    background-image: url("_img/pink.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+table#tabela-principal td.comida-brain_pink{
+    /*background-color: darkred;*/    
+    /*background-image: radial-gradient(ellipse farthest-corner at 100px 100px , rgb(128, 128, 128) 30%, rgba(128, 128, 128, 0.4) 50%, white 80%);*/
+    background-image: url("_img/pink_and_the_brain.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 table#tabela-principal td.snake{    
-    background-color: gray;
+    background-color: #3e8e57;
 }
 
 table#tabela-principal td.rabo-snake-dir{    
-    background-image: radial-gradient(ellipse farthest-corner at 100px 100px , rgb(128, 128, 128) 30%, rgba(128, 128, 128, 0.4) 50%, white 80%);
-    /*transition: all 0.5s ease-in;*/
-    transition: width 0.5s, height 0.5s, background-color 0.5s, transform 0.5s;
+    background-image: linear-gradient(45deg, #3e8e57 50%, white 51%);
 }
 
 table#tabela-principal td.rabo-snake-esq{    
-    background-image: radial-gradient(ellipse farthest-corner at 0px 100px , rgb(128, 128, 128) 30%, rgba(128, 128, 128, 0.4) 50%, white 80%);
-    transition: width 0.5s, height 0.5s, background-color 0.5s, transform 0.5s;
+    background-image: linear-gradient(-45deg, #3e8e57 50%, white 51%);
 }
 
 table#tabela-principal td.cabeca-snake{
-    background-color: darkslategray;
+    background-color: #144e26;
 }
 
 table#tabela-principal td.rabo-snake{
-    background-color: green;
+    background-color: #3e8e57;
 }
 
 img {
@@ -111,7 +175,3 @@ figcaption{
     top: 380px;
 }
 
-h2 {
-    text-align: center;
-    font-family: sans-serif;
-}

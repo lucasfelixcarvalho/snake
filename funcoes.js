@@ -138,6 +138,13 @@ function apareceComida() {
             l--;
         if (c == 9)
             c--;
+        
+        var classImg = "";
+
+        if((l + c)%2 == 0)
+            classImg = "brain";
+        else
+            classImg = "brain_pink";
 
         if (tbJogo[l][c].status == "default") { // Seta apenas se a celula for default, ou seja, em branco
             tbJogo[l][c].status = "comida";
@@ -145,7 +152,7 @@ function apareceComida() {
         }
     }
 
-    document.getElementById("lin" + l + "col" + c).setAttribute("class", "comida");
+    document.getElementById("lin" + l + "col" + c).setAttribute("class", "comida-" + classImg);
 };
 
 function comer() {
