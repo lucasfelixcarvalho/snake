@@ -69,7 +69,7 @@ p.lvl{
     color: green;
 }
 
-@media screen and (max-width: 1450px){
+@media screen and (max-width: 1200px){
     body{
         height: 98vw;
         width: 98vw;
@@ -84,7 +84,7 @@ p.lvl{
     }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 865px){
     div#interface{
         width: 100%;
         height: 100%;
