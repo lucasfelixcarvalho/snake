@@ -47,6 +47,17 @@ div#jogo {
     max-height: 98vh;
 }
 
+div#dead{
+    width: 98%;
+    height: 98%;
+    max-width: 98vh;
+    max-height: 98vh;
+    background: rgba(0,0,0,.5);
+    z-index: 1;
+    margin: auto;
+    position: absolute;
+}
+
 p, label {
     text-align: left;
     font-family: "Arcade Classic";        
@@ -55,6 +66,19 @@ p, label {
 
 p{
     font-size: 250%;
+}
+
+p#gameOver{
+    color: red;
+    line-height: 200%;
+    font-size: 800%;
+    text-align: center;
+}
+
+p#continue{
+    color: white;
+    text-align: right;
+    font-size: 200%;
 }
 
 label{
@@ -82,6 +106,14 @@ p.lvl{
     p{
         font-size: 200%;
     }
+
+    p#gameOver{
+        font-size: 500%;
+    }
+
+    p#continue{
+        font-size: 150%;
+    }
 }
 
 @media screen and (max-width: 865px){
@@ -105,6 +137,14 @@ p.lvl{
 
     p{
         font-size: 150%;
+    }
+
+    p#gameOver{
+        font-size: 300%;
+    }
+
+    p#continue{
+        font-size: 100%;
     }
 }
 
@@ -161,17 +201,5 @@ table#tabela-principal td.cabeca-snake{
 
 table#tabela-principal td.rabo-snake{
     background-color: #3e8e57;
-}
-
-img {
-    left: 0px;
-    top: 0px;
-    position: absolute;
-    z-index: 100;
-}
-
-figcaption{
-    position: absolute;
-    top: 380px;
 }
 

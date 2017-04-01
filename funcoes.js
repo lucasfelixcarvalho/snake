@@ -36,9 +36,6 @@ function loadAll() {
     for (var i = 0; i < tabela.length; i++)
         tabela[i].setAttribute("class", "default");
 
-    document.getElementById("wasted").setAttribute("hidden", "true");
-    document.getElementById("figWasted").setAttribute("hidden", "true");
-
     life = 2;
     tempo = 500;
     direcao = "";
@@ -60,6 +57,9 @@ function loadAll() {
 
     document.addEventListener("keydown", inputTeclado); // leitura do teclado do usuário (setas)
     document.getElementById("level").innerText = "Level: " + life.toString();
+
+    document.getElementById("dead").removeEventListener("click", loadAll);
+    document.getElementById("dead").setAttribute("hidden", "true");
 
     snake.push(new Snake(0, 3, "cabeca-snake"));
     snake.push(new Snake(0, 2, "snake"));
@@ -97,13 +97,25 @@ function eventoTimer() {
 
 // Morreu!
 function dead() {
+    document.getElementById("dead").removeAttribute("hidden");
+    document.getElementById("dead").addEventListener("click", loadAll);
     clearInterval(timer);
     go = 0;
-    document.removeEventListener("keydown", inputTeclado);
-    document.getElementById("wasted").removeAttribute("hidden");
-    document.getElementById("figWasted").removeAttribute("hidden");
-    document.getElementById("bestScore").innerText = "Best Score: " + life.toString();
-    setCookie();
+    document.removeEventListener("keydown", inputTeclado);    
+    readCookie();
+};
+
+// Verifica se foi a maior pontuaçao
+function maiorPontuacao(score)
+{
+    if(score < life)
+    {
+        document.getElementById("bestScore").innerText = "Best Score: " + life.toString();
+        setCookie()
+    }
+
+    if(go == 0)
+        document.getElementById("bestScore").innerText = "Best Score: " + score.toString();
 };
 
 // Gravar Cookie de melhor pontuaçao
@@ -117,9 +129,10 @@ function setCookie() {
 function readCookie() {
     try {
         var cookie = localStorage.getItem("bestscore").split("=");
-        if (cookie) {
-            document.getElementById("bestScore").innerText = "Best Score: " + cookie[0].toString();
-        }
+        if(cookie)    
+            maiorPontuacao(cookie[0]);
+        else
+            setCookie();
     }
     catch (ex) { }
 };
@@ -319,7 +332,6 @@ function inputTeclado(event) {
 // Load da página
 window.onload = function start() {
     loadAll();
-    document.getElementById("wasted").addEventListener("click", loadAll);
     document.getElementById("modo-lenon").addEventListener("click", setModo);
 };
 
