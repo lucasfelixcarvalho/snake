@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face{
     font-family: "Arcade Classic";
-    src: url("/_font/ARCADECLASSIC.TTF");    
+    src: url("../_font/ARCADECLASSIC.TTF");    
 }
 
 body{
@@ -170,7 +170,7 @@ table#tabela-principal td.default{
 table#tabela-principal td.comida-brain{
     /*background-color: darkred;*/    
     /*background-image: radial-gradient(ellipse farthest-corner at 100px 100px , rgb(128, 128, 128) 30%, rgba(128, 128, 128, 0.4) 50%, white 80%);*/
-    background-image: url("_img/pink.jpeg");
+    background-image: url("../_img/pink.jpeg");
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -178,7 +178,7 @@ table#tabela-principal td.comida-brain{
 table#tabela-principal td.comida-brain_pink{
     /*background-color: darkred;*/    
     /*background-image: radial-gradient(ellipse farthest-corner at 100px 100px , rgb(128, 128, 128) 30%, rgba(128, 128, 128, 0.4) 50%, white 80%);*/
-    background-image: url("_img/pink_and_the_brain.jpg");
+    background-image: url("../_img/pink_and_the_brain.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
 }
