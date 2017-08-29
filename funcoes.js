@@ -281,7 +281,7 @@ function mover(fn) {
     else
     {
         setSnake(snake);
-        setRaboSnake(snake[snake.length -1]);
+        //setRaboSnake(snake[snake.length -1]);
     }
 };
 
