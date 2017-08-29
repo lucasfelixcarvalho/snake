@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Snake</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+</head>
+<script src="funcoes.js"></script>
+
+<body>
+    <div id="dead" hidden>
+        <p id="gameOver">GAME<br />OVER</p>
+        <p id="continue">Click to restart...</p>
+            </div>
+    <div id="interface" class="quadrado">
+        <div id="jogo" >
+            <table id="tabela-principal">
+                <script>
+                    var tabela = "";
+                    for (var i = 0; i < 9; i++) {
+                        tabela += "<tr id=\"lin" + i + "\">";
+                        for (var k = 0; k < 9; k++) {
+                            tabela += "<td class=\"default\" id=\"lin" + i + "col" + k + "\"></td>";
+                        }
+                        tabela += "</tr>";
+                    }
+                    document.write(tabela);
+                </script>
+            </table>
+        </div>
+</div>
+        <div id="informacoes" >
+            <section id="info">
+                <p id="bestScore" class="bestSco">Best Score:</p>
+                <p id="level" class="lvl">Level: </p>
+                <input type="checkbox" id="modo-lenon" />
+                <label for="modo-lenon">Modo Lenon</label>                
+            </section>
+            
+        </div>
+    
+
+</body>
+
+</html>
