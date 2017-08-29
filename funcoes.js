@@ -129,9 +129,9 @@ function setCookie() {
 function readCookie() {
     debugger;
     try {
-        var cookie = localStorage.getItem("bestScore").split("=");
-        if(cookie)    
-            maiorPontuacao(cookie[0]);
+        
+        if(localStorage.getItem("bestScore") != null)    
+            maiorPontuacao(localStorage.getItem("bestScore"));
         else
             setCookie();
     }
