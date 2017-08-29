@@ -127,9 +127,7 @@ function setCookie() {
 
 // Recuperar Cookie de melhor pontuaçao
 function readCookie() {
-    debugger;
     try {
-        
         if(localStorage.getItem("bestScore") != null)    
             maiorPontuacao(localStorage.getItem("bestScore"));
         else
