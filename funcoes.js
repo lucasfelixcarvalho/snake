@@ -127,6 +127,7 @@ function setCookie() {
 
 // Recuperar Cookie de melhor pontuaçao
 function readCookie() {
+    debugger;
     try {
         var cookie = localStorage.getItem("bestScore").split("=");
         if(cookie)    
