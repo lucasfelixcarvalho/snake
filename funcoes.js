@@ -122,13 +122,13 @@ function maiorPontuacao(score)
 function setCookie() {
     var d = new Date();
     d.setTime(d.getTime() + (5 * 24 * 60 * 60 * 1000));
-    localStorage.setItem("bestscore", life.toString());
+    localStorage.setItem("bestScore", life.toString());
 };
 
 // Recuperar Cookie de melhor pontuaçao
 function readCookie() {
     try {
-        var cookie = localStorage.getItem("bestscore").split("=");
+        var cookie = localStorage.getItem("bestScore").split("=");
         if(cookie)    
             maiorPontuacao(cookie[0]);
         else
