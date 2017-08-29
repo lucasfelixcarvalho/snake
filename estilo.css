@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face{
     font-family: "Arcade Classic";
-    src: url("https://lucasfelixcarvalho.github.io/snake/_font/ARCADECLASSIC.TTF");    
+    src: url("../_font/ARCADECLASSIC.TTF");    
 }
 
 body{
